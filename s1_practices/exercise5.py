@@ -1,3 +1,5 @@
+# Euclidean Distanceを計算しましょう
+
 from IPython import embed
 import numpy as np
 from collections import defaultdict

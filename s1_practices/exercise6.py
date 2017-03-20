@@ -1,3 +1,5 @@
+# xからyを`predict`して、それが現実のyと合ってるかどうか見る
+
 from IPython import embed
 import numpy as np
 from collections import defaultdict
