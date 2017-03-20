@@ -13,7 +13,7 @@ class MyKNeighborsClassifier(object):
 
     def _distance(self, data1, data2):
         """returns Manhattan distance"""
-        return sum(abs(data1 - data2))          
+        return sum(abs(data1 - data2))
 
     def _compute_weights(self, distances):
         if self.weights == 'uniform':
@@ -46,9 +46,6 @@ def main():
     assert(np.array_equal(weights1, np.array([1, 1/2, 1/3, -1/4])))
     weights2 = neighbor._compute_weights(np.array([-1,0,2,3]))
     print(weights2)
-    assert(np.array_equal(weights2, np.array([0,1,0,0])))   
+    assert(np.array_equal(weights2, np.array([0,1,0,0])))
 
 if __name__ == '__main__': main()
-
-
-
