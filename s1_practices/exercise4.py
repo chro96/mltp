@@ -11,15 +11,14 @@ class MyKNeighborsClassifier(object):
         self.n_neighbors = n_neighbors
         self.weights = weights
 
-    def _distance(self, data1, data2):
-        return sum(abs(data1 - data2))
-
     def _compute_weights(self, distances):
         if self.weights == 'uniform':
             # distances.shape[0] で各次元の要素数をだす
             return np.ones(distances.shape[0])
         elif self.weights == 'distance':
-            embed()
+            # 重りとして距離の inverse を使う。
+            # pythonでは 0 は falsy とされる
+            # 距離が 0 のものは同一のものとして判断するため他の重りを 0 にする
             return 1 / distances if all(distances) else np.array([0 if d else 1 for d in distances])
         raise ValueError("weights not recognized: should be 'uniform' or 'distance'")
 

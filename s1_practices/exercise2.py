@@ -15,9 +15,9 @@ class MyKNeighborsClassifier(object):
 
     def _compute_weights(self, distances):
         # distances.shape[0] で各次元の要素数をだす
-        # np.ones() でn*nで全ての要素が1の行列を生成する
+        # np.ones() で n*n で全ての要素が1の行列を生成する
         # 全データ同じ比重を持つ
-        embed()
+        # 一次元配列で要素数が 4 なので distances.shape[0] は 4 が return される
         return np.ones(distances.shape[0])
 
 # compute_weightsをテストする
