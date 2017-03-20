@@ -18,7 +18,7 @@ class MyKNeighborsClassifier(object):
         elif self.weights == 'distance':
             # 重りとして距離の inverse を使う。
             # pythonでは 0 は falsy とされる
-            # 距離が 0 のものは同一のものとして判断するため他の重りを 0 にする
+            # 距離が 0 のものはテストーデータを同一のものとして判断するため他の重りを 0 にする
             return 1 / distances if all(distances) else np.array([0 if d else 1 for d in distances])
         raise ValueError("weights not recognized: should be 'uniform' or 'distance'")
 
