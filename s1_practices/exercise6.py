@@ -43,9 +43,12 @@ class MyKNeighborsClassifier(object):
         return max(weights_by_class, key=weights_by_class.get)
 
     def _predict(self, x):
+        テストデータ x に対しての y をそれぞれ計算する
         return [self._predict_one(i) for i in x]
 
     def score(self, x, y):
+        embed()
+        # trueになった割合を計算する
         return sum(self._predict(x) == y) / len(y)
 
 X_train = np.array([[-1, -1], [-2, -1], [-3, -2], [1, 1], [2, 1], [3, 2]])
