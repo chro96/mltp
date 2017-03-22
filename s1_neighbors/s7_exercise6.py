@@ -54,6 +54,7 @@ def main():
 	neighbor = MyKNeighborsClassifier().fit(X_train, y_train)
 	X_test = np.array([[1, 0], [-2, -2]])
 	y_test = np.array([0, 0])
+	print(neighbor.predict(X_test))
 	score = neighbor.score(X_test, y_test)
 	print(score)
 	assert(score == .5)

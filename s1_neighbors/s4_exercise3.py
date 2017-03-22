@@ -10,7 +10,7 @@ class MyKNeighborsClassifier(object):
 		return self
 
 	def _distance(self, data1, data2):
-        """returns Manhattan distance"""
+		"""returns Manhattan distance"""
 		return sum(abs(data1 - data2))			
 
 	def _compute_weights(self, distances):
