@@ -30,7 +30,7 @@ class MyStandardScaler(object):
         """
         self.mean_とself.scale_を元にarrayを変化させる
         """
-        # Your code here 
+        # Your code here
         pass
 
     def fit_transform(self, X):
@@ -50,4 +50,3 @@ scaled_test = scaler.transform(X_test) # Test Dataのtransform
 print(scaled_test)
 scaled_test2 = np.array([[-2.44948974,1.22474487,-0.26726124],[0,0,-1.06904497]])
 assert(np.allclose(scaled_test, scaled_test2))
-

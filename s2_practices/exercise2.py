@@ -1,3 +1,5 @@
+# 複数の特徴をStandardizationする
+
 from IPython import embed
 import numpy as np
 from sklearn.preprocessing import scale, StandardScaler

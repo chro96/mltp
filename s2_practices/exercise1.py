@@ -1,4 +1,4 @@
-# 一つの特徴だけStandardizationさせる
+# 一つの特徴だけStandardizationする
 
 from IPython import embed
 import numpy as np
