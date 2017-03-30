@@ -35,7 +35,7 @@ def main():
 	neighbor = MyKNeighborsClassifier()
 	weights = neighbor._compute_weights(np.array([1, 2, 3, -4]))
 	print(weights)
-	assert(all(weights == np.array([1,1,1,1])) == True)
+	assert(np.array_equal(weights, np.array([1,1,1,1])))
 
 if __name__ == '__main__': main()
 

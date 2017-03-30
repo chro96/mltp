@@ -43,10 +43,10 @@ def main():
 	neighbor = MyKNeighborsClassifier(n_neighbors=3, weights='distance')
 	weights1 = neighbor._compute_weights(np.array([1,2,3,-4]))
 	print(weights1)
-	assert(all(weights1 == np.array([1, 1/2, 1/3, -1/4])) == True)
+	assert(np.array_equal(weights1, np.array([1, 1/2, 1/3, -1/4])))
 	weights2 = neighbor._compute_weights(np.array([-1,0,2,3]))
 	print(weights2)
-	assert(all(weights2 == np.array([0,1,0,0])) == True)
+	assert(np.array_equal(weights2, np.array([0,1,0,0])))	
 
 if __name__ == '__main__': main()
 

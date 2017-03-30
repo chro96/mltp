@@ -48,19 +48,6 @@ X_test = np.array([[-1.,  1.,  0.],
 				   [ 1.,  0., -1.]])
 scaled_test = scaler.transform(X_test) # Test Dataのtransform
 print(scaled_test)
-"""
-[[-2.44948974  1.22474487 -0.26726124]
- [ 0.          0.         -1.06904497]]
-"""
-
-
-
-
-
-
-
-
-
-
-
+scaled_test2 = np.array([[-2.44948974,1.22474487,-0.26726124],[0,0,-1.06904497]])
+assert(np.allclose(scaled_test, scaled_test2))
 

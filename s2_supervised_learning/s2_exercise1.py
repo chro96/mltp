@@ -11,4 +11,4 @@ def scale_one(x):
 scaled = scale_one(np.array([1,2,0]))
 print(scaled) # [ 0.          1.22474487 -1.22474487]
 assert(np.mean(scaled) == 0)
-assert(str(np.std(scaled)) == '1.0') # floatの状態だとイコールにならないのでstringに直す
+assert(np.isclose(np.std(scaled), 1))
