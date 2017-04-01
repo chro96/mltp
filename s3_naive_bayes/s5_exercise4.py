@@ -4,28 +4,28 @@ from sklearn.naive_bayes import MultinomialNB
 np.set_printoptions(precision=6)
 
 class MyMultinomialNB(object):
-	def __init__(self, alpha=1.0):
-		self.alpha = alpha
+    def __init__(self, alpha=1.0):
+        self.alpha = alpha
 
-	def fit(self, X, y):
-		N = X.shape[0]
-		# group by class
-		separated = [X[np.where(y == i)[0]] for i in np.unique(y)]
-		# class prior
-		self.class_log_prior_ = [np.log(len(i) / N) for i in separated]
-		# count of each term
-		count = np.array([np.array(i).sum(axis=0) for i in separated]) + self.alpha
-		# log probability of each term
-		self.feature_log_prob_ = np.log(count / count.sum(axis=1)[np.newaxis].T)
-		return self
+    def fit(self, X, y):
+        N = X.shape[0]
+        # group by class
+        separated = [X[np.where(y == i)[0]] for i in np.unique(y)]
+        # class prior
+        self.class_log_prior_ = [np.log(len(i) / N) for i in separated]
+        # count of each term
+        count = np.array([np.array(i).sum(axis=0) for i in separated]) + self.alpha
+        # log probability of each term
+        self.feature_log_prob_ = np.log(count / count.sum(axis=1)[np.newaxis].T)
+        return self
 
-	def predict_log_proba(self, X):
-		"""
-		p(c|d)を計算する
-		log probabilityを使ってるので掛けずに足すこと
-		"""
-		# Your code here
-		pass
+    def predict_log_proba(self, X):
+        """
+        p(c|d)を計算する
+        log probabilityを使ってるので掛けずに足すこと
+        """
+        # Your code here
+        pass
 
 X = np.array([
     [2,1,0,0,0,0],
