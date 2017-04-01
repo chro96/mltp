@@ -1,3 +1,4 @@
+from IPython import embed
 import numpy as np
 from sklearn.naive_bayes import MultinomialNB
 
@@ -8,19 +9,27 @@ class MyMultinomialNB(object):
         self.alpha = alpha
 
     def fit(self, X, y):
+        # 一番上の次元の要素数を N とする（データセットの数）
         N = X.shape[0]
-        # group by class
+        # クラスごとにデータをグルーピングする
         separated = [X[np.where(y == i)[0]] for i in np.unique(y)]
-        # class prior
+        # 各クラスの数 / データセットの数
         self.class_log_prior_ = [np.log(len(i) / N) for i in separated]
-        # count of each term
+        # クラスごとの各termの要素数を計算する
+        # alpha を追加することで smoothing する
         count = np.array([np.array(i).sum(axis=0) for i in separated]) + self.alpha
-        # log probability of each term
+        # p(t|c) を計算する
+        # numpyにおいて、行列同士の四則演算は要素同士の四則演算になる
+        # numpyの行列同士の掛け算は数学的な意味での掛け算ではないことに注意
         self.feature_log_prob_ = np.log(count / count.sum(axis=1)[np.newaxis].T)
         return self
 
     def predict_log_proba(self, X):
-        return [(self.feature_log_prob_ * x).sum(axis=1) + self.class_log_prior_
+        # p(c|d) を計算する
+        # p(c|d) = p(c) * p(t1|c) * p(t2|c) * p(t3|c) * ...
+        # 対数を使ってるので掛けずに足すこと
+        # 対数を使ってるので乗数は掛け算すること
+        return [self.class_log_prior_ + (self.feature_log_prob_ * x).sum(axis=1)
                 for x in X]
 
 X = np.array([

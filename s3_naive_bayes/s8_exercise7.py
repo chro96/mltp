@@ -72,4 +72,3 @@ proba2 = nb.predict_log_proba(X_test)
 print(proba2)
 
 assert(np.allclose(proba, proba2))
-

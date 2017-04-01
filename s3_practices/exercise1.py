@@ -1,3 +1,4 @@
+from IPython import embed
 import numpy as np
 from sklearn.naive_bayes import MultinomialNB
 
@@ -8,10 +9,11 @@ class MyMultinomialNB(object):
         self.alpha = alpha
 
     def fit(self, X, y):
+        # 一番上の次元の要素数を N とする（データセットの数）
         N = X.shape[0]
-        # group by class
+        # クラスごとにデータをグルーピングする
         separated = [X[np.where(y == i)[0]] for i in np.unique(y)]
-        # class prior
+        # 各クラスの数 / データセットの数
         self.class_log_prior_ = [np.log(len(i) / N) for i in separated]
         return self
 
@@ -22,6 +24,7 @@ X = np.array([
     [1,0,0,0,1,1]
 ])
 y = np.array([0,0,0,1])
+
 nb = MyMultinomialNB().fit(X, y)
 print(nb.class_log_prior_)
 

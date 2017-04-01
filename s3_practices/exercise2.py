@@ -9,15 +9,14 @@ class MyMultinomialNB(object):
         self.alpha = alpha
 
     def fit(self, X, y):
+        # 一番上の次元の要素数を N とする（データセットの数）
         N = X.shape[0]
-        # group by class
+        # クラスごとにデータをグルーピングする
         separated = [X[np.where(y == i)[0]] for i in np.unique(y)]
-        # class prior
-        self.class_log_prior_ = [np.log(len(i) / N) for i in separated]
-        # count of each term
+        # クラスごとの各termの要素数を計算する
+        # alpha を追加することで smoothing する
         count = np.array([np.array(i).sum(axis=0) for i in separated]) + self.alpha
         return count
-
 
 X = np.array([
     [2,1,0,0,0,0],
