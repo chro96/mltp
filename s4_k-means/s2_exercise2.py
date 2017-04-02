@@ -25,13 +25,3 @@ sample = np.array([3, 3])
 distance = kmeans._distance(cluster_centers, sample)
 print(distance)
 assert(np.allclose(distance, np.array([4.47213595, 3.16227766])))
-
-
-
-
-
-
-
-
-
-
