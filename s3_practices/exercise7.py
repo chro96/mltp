@@ -18,7 +18,7 @@ class MyBernoulliNB(object):
         # クラスごとの各termの要素数を計算する
         # alpha を追加することで smoothing する
         count = np.array([np.array(i).sum(axis=0) for i in separated]) + self.alpha
-        # smoothingはクラスの種類数で決まる
+        # 起こった／起こらなかったの様な2値をとるsmoothingはこれ
         smoothing = 2 * self.alpha
         # 分母はクラス種類ごとのデータセットの数 + smoothing で決まる
         denominator = np.array([len(i) + smoothing for i in separated])
