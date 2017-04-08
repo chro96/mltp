@@ -11,7 +11,7 @@ class MyKMeans(object):
     def fit(self, X):
         initial = np.random.permutation(X.shape[0])[:self.n_clusters]
         self.cluster_centers_ = X[initial]
-        
+
         for _ in range(self.max_iter):
             self.labels_ = np.array([self._nearest(self.cluster_centers_, x) for x in X])
             X_by_cluster = # your code here
@@ -31,7 +31,3 @@ X_by_cluster = kmeans.fit(X)
 print(X_by_cluster)
 assert(np.array_equal(X_by_cluster[0], X[2:]))
 assert(np.array_equal(X_by_cluster[1], X[:2]))
-
-
-
-
