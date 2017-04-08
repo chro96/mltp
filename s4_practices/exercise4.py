@@ -1,3 +1,4 @@
+from IPython import embed
 import numpy as np
 
 class MyKMeans(object):
@@ -14,9 +15,7 @@ class MyKMeans(object):
 
         for _ in range(self.max_iter):
             self.labels_ = np.array([self._nearest(self.cluster_centers_, x) for x in X])
-            X_by_cluster = [X[np.where(self.labels_ == i)[0]] for i in range(self.n_clusters)]
-            # update the clusters
-            self.cluster_centers_ = # your code here
+            self.x_by_cluster = [X[np.where(self.labels_ == i)[0]] for i in range(self.n_clusters)]
             return self
 
     def _nearest(self, centers, x):
@@ -25,8 +24,10 @@ class MyKMeans(object):
     def _distance(self, centers, x):
         return np.sqrt(((centers - x)**2).sum(axis=1))
 
-
 X = np.array([[1,1],[1,2],[2,2],[4,5],[5,4]])
-kmeans = MyKMeans(n_clusters=2, max_iter=5, random_state=1).fit(X)
-print(kmeans.cluster_centers_)
-assert(np.allclose(np.array(kmeans.cluster_centers_), np.array([[3.6666667, 3.6666667],[1,1.5]])))
+kmeans = MyKMeans(n_clusters=2, max_iter=5, random_state=1)
+kmeans.fit(X)
+X_by_cluster = kmeans.x_by_cluster
+print(X_by_cluster)
+assert(np.array_equal(X_by_cluster[0], X[2:]))
+assert(np.array_equal(X_by_cluster[1], X[:2]))

@@ -16,7 +16,7 @@ class MyKMeans(object):
             self.labels_ = np.array([self._nearest(self.cluster_centers_, x) for x in X])
             X_by_cluster = [X[np.where(self.labels_ == i)[0]] for i in range(self.n_clusters)]
             # update the clusters
-            self.cluster_centers_ = # your code here
+            self.cluster_centers_ = [c.sum(axis=0) / len(c) for c in X_by_cluster]
             return self
 
     def _nearest(self, centers, x):
@@ -24,7 +24,6 @@ class MyKMeans(object):
 
     def _distance(self, centers, x):
         return np.sqrt(((centers - x)**2).sum(axis=1))
-
 
 X = np.array([[1,1],[1,2],[2,2],[4,5],[5,4]])
 kmeans = MyKMeans(n_clusters=2, max_iter=5, random_state=1).fit(X)

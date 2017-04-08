@@ -11,7 +11,7 @@ class MyKMeans(object):
     def fit(self, X):
         initial = np.random.permutation(X.shape[0])[:self.n_clusters]
         self.cluster_centers_ = X[initial]
-        
+
         for _ in range(self.max_iter):
             self.labels_ = np.array([self._nearest(self.cluster_centers_, x) for x in X])
             X_by_cluster = [X[np.where(self.labels_ == i)[0]] for i in range(self.n_clusters)]
@@ -33,10 +33,3 @@ kmeans = MyKMeans(n_clusters=2, max_iter=5, random_state=1)
 kmeans.fit(X)
 print(kmeans.inertia_)
 assert(np.isclose(kmeans.inertia_, 2.33333333))
-
-
-
-
-
-
-
