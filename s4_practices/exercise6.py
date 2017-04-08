@@ -1,3 +1,4 @@
+from IPython import embed
 import numpy as np
 
 class MyKMeans(object):
@@ -14,10 +15,12 @@ class MyKMeans(object):
 
         for _ in range(self.max_iter):
             self.labels_ = np.array([self._nearest(self.cluster_centers_, x) for x in X])
-            X_by_cluster = [X[np.where(self.labels_ == i)[0]] for i in range(self.n_clusters)]
-            # update the clusters
+            X_by_cluster = [X[np.where(self.labels_ == i)] for i in range(self.n_clusters)]
             self.cluster_centers_ = [c.sum(axis=0) / len(c) for c in X_by_cluster]
-        # sum of square distances from the closest cluster
+        # 学習には不要なのですが、どれだけ上手くクラスタリングされてるかを見るためにinertiaという指標を使います。
+        # inertiaはそれぞれのcluster centerとそれに属してるデータのSquare Distanceの合計です。
+        # Square DistanceはEuclidean Distanceのルートを取らない版です。
+        # クラスタごとの慣性を合計して全体の慣性を計算する
         self.inertia_ = sum(((c - x)**2).sum() for c, x in zip(self.cluster_centers_, X_by_cluster))
         return self
 

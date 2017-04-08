@@ -13,7 +13,7 @@ class MyKMeans(object):
     def fit(self, X):
         # クラスターの初期値をn_clustersの分だけ作る
         # 今回の場合はクラスターを二つ作る
-        # Xからランダムに選びself.cluster_centers_に入れる
+        # Xからランダムに重心を選びself.cluster_centers_に入れる
         # permutation(x)には配列だけでなくint型整数も渡せる
         initial = np.random.permutation(X.shape[0])[:self.n_clusters]
         self.cluster_centers_ = X[initial]

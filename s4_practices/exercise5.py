@@ -1,3 +1,4 @@
+from IPython import embed
 import numpy as np
 
 class MyKMeans(object):
@@ -11,15 +12,19 @@ class MyKMeans(object):
     def fit(self, X):
         initial = np.random.permutation(X.shape[0])[:self.n_clusters]
         self.cluster_centers_ = X[initial]
-
+        # イテレーションの数だけクラスターを作り直す
+        # for in の return はイテレーション後の最後の値だけ返す
         for _ in range(self.max_iter):
+            # X の中身がそれぞれどのクラスター(ラベル0かラベル1か)に属するかを計算しself.labels_に入れる
             self.labels_ = np.array([self._nearest(self.cluster_centers_, x) for x in X])
-            X_by_cluster = [X[np.where(self.labels_ == i)[0]] for i in range(self.n_clusters)]
-            # update the clusters
+            # whereでラベル0かラベル1かを判定してクラスター別に振り分ける
+            X_by_cluster = [X[np.where(self.labels_ == i)] for i in range(self.n_clusters)]
+            # イテレート毎にクラスターの重心を計算し直す
             self.cluster_centers_ = [c.sum(axis=0) / len(c) for c in X_by_cluster]
             return self
 
     def _nearest(self, centers, x):
+        # centersの中で距離が一番小さいラベルを return する
         return np.argmin(self._distance(centers, x))
 
     def _distance(self, centers, x):

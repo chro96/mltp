@@ -12,13 +12,14 @@ class MyKMeans(object):
     def fit(self, X):
         initial = np.random.permutation(X.shape[0])[:self.n_clusters]
         self.cluster_centers_ = X[initial]
-
-        for _ in range(self.max_iter):
-            self.labels_ = np.array([self._nearest(self.cluster_centers_, x) for x in X])
-            X_by_cluster = [X[np.where(self.labels_ == i)[0]] for i in range(self.n_clusters)]
-            return X_by_cluster
+        # X の中身がそれぞれどのクラスター(ラベル0かラベル1か)に属するかを計算しself.labels_に入れる
+        self.labels_ = np.array([self._nearest(self.cluster_centers_, x) for x in X])
+        # whereでラベル0かラベル1かを判定してクラスター別に振り分ける
+        X_by_cluster = [X[np.where(self.labels_ == i)] for i in range(self.n_clusters)]
+        return X_by_cluster
 
     def _nearest(self, centers, x):
+        # centersの中で距離が一番小さいラベルを return する
         return np.argmin(self._distance(centers, x))
 
     def _distance(self, centers, x):
