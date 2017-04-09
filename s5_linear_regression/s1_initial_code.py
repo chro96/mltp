@@ -17,7 +17,3 @@ X = np.array([[0], [1], [2], [3]])
 y = np.array([-1, 1, 3, 5])
 regr = MyLinearRegression()
 print(regr.fit(X, y))
-
-
-
-

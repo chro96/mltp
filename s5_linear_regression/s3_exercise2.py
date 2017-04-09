@@ -13,6 +13,7 @@ class MyLinearRegression(object):
         m = X.shape[0]
 
         for i in range(self.n_iter):
+            # θ:= θ + (α/m)(y−h(x))X
             output = X.dot(self.w)
             errors = y - output
             if i % 10 == 0:
@@ -28,7 +29,4 @@ X_test = np.array([[4],[5]])
 regr = MyLinearRegression()
 weight = regr.fit(X, y)
 print(weight)
-
 assert(np.array_equal(weight, np.array([0.95, 1.05])))
-
-

@@ -16,7 +16,7 @@ class MyLinearRegression(object):
         for i in range(self.n_iter):
             # your code here
             return output
-        return self        
+        return self
 
 X = np.array([[0], [1], [2], [3]])
 y = np.array([-1, 1, 3, 5])
@@ -26,4 +26,3 @@ output = regr.fit(X, y)
 print(output)
 
 assert(np.array_equal(output, np.array([1,2,3,4])))
-
