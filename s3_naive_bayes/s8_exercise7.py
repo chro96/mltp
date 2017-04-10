@@ -67,7 +67,7 @@ nb = MyBernoulliNB(alpha=1).fit(np.where(X > 0, 1, 0), y)
 proba = nb.predict_log_proba(X_test)
 print(proba)
 
-nb2 = MyBernoulliNB(alpha=1).fit(np.where(X > 0, 1, 0), y)
+nb2 = BernoulliNB(alpha=1).fit(np.where(X > 0, 1, 0), y)
 proba2 = nb.predict_log_proba(X_test)
 print(proba2)
 

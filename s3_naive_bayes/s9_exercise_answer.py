@@ -29,12 +29,10 @@ class MyMultinomialNB(object):
 
 
 class MyBernoulliNB(object):
-    def __init__(self, alpha=1.0, binarize=0.0):
+    def __init__(self, alpha=1.0):
         self.alpha = alpha
-        self.binarize = binarize
 
     def fit(self, X, y):
-        X = self._binarize_X(X)
         N = X.shape[0]
         # group by class
         separated = [X[np.where(y == i)[0]] for i in np.unique(y)]
@@ -52,16 +50,12 @@ class MyBernoulliNB(object):
 
 
     def predict_log_proba(self, X):
-        X = self._binarize_X(X)
         return [(np.log(self.feature_prob_) * x + \
                  np.log(1 - self.feature_prob_) * np.abs(x - 1)
                 ).sum(axis=1) + self.class_log_prior_ for x in X]
 
     def predict(self, X):
         return np.argmax(self.predict_log_proba(X), axis=1)
-
-    def _binarize_X(self, X):
-        return np.where(X > self.binarize, 1, 0) if self.binarize != None else X
 
 
 X = np.array([
@@ -73,8 +67,8 @@ X = np.array([
 y = np.array([0,0,0,1])
 X_test = np.array([[3,0,0,0,1,1],[0,1,1,0,1,1]])
 
-nb = MyBernoulliNB(alpha=1).fit(X, y)
-print(nb.predict(X_test))
+nb = MyBernoulliNB(alpha=1).fit(np.where(X > 0, 1, 0), y)
+print(nb.predict(np.where(X_test > 0, 1, 0)))
 
 
 
