@@ -73,7 +73,7 @@ X = np.array([
 y = np.array([0,0,0,1])
 X_test = np.array([[3,0,0,0,1,1],[0,1,1,0,1,1]])
 
-nb = MyMultinomialNB(alpha=1).fit(X, y)
+nb = MyBernoulliNB(alpha=1).fit(X, y)
 print(nb.predict(X_test))
 
 

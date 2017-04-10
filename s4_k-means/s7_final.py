@@ -1,4 +1,5 @@
 import numpy as np
+from pdb import set_trace
 
 class MyKMeans(object):
     def __init__(self, n_clusters=8, max_iter=300, random_state=None):
@@ -11,14 +12,12 @@ class MyKMeans(object):
     def fit(self, X):
         initial = np.random.permutation(X.shape[0])[:self.n_clusters]
         self.cluster_centers_ = X[initial]
-        self.cluster_centers_ = np.array([[1,1],[1,2]])
         
         for _ in range(self.max_iter):
             self.labels_ = np.array([self._nearest(self.cluster_centers_, x) for x in X])
-            X_by_cluster = [X[np.where(self.labels_ == i)[0]] for i in range(self.n_clusters)]
+            X_by_cluster = [X[np.where(self.labels_ == i)] for i in range(self.n_clusters)]
             # update the clusters
             self.cluster_centers_ = [c.sum(axis=0) / len(c) for c in X_by_cluster]
-            print(self.cluster_centers_)
         # sum of square distances from the closest cluster
         self.inertia_ = sum(((c - x)**2).sum() for c, x in zip(self.cluster_centers_, X_by_cluster))
         ## これでもいいがループ数が多い分遅い

@@ -23,7 +23,7 @@ class MyKNeighborsClassifier(object):
 
     def _predict_one(self, test):
         distances = np.array([self._distance(x, test) for x in self.x])
-        top_k = np.argsort(distances)[:self.n_neighbors]
+        top_k = distances.argsort()[:self.n_neighbors]
         top_k_ys = self.y[top_k]
         top_k_distances = distances[top_k]
         top_k_weights = self._compute_weights(top_k_distances)
