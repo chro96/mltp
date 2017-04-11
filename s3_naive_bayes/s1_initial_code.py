@@ -9,7 +9,7 @@ class MyMultinomialNB(object):
 	def fit(self, X, y):
 		N = X.shape[0]
 		# group by class
-		separated = [X[np.where(y == i)[0]] for i in np.unique(y)]
+		separated = [X[np.where(y == i)] for i in np.unique(y)]
 		return separated
 
 X = np.array([

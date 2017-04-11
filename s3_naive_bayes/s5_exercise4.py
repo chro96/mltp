@@ -10,7 +10,7 @@ class MyMultinomialNB(object):
     def fit(self, X, y):
         N = X.shape[0]
         # group by class
-        separated = [X[np.where(y == i)[0]] for i in np.unique(y)]
+        separated = [X[np.where(y == i)] for i in np.unique(y)]
         # class prior
         self.class_log_prior_ = [np.log(len(i) / N) for i in separated]
         # count of each term
