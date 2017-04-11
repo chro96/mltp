@@ -1,7 +1,6 @@
 import numpy as np
 
 from sklearn import datasets, linear_model
-from sklearn.model_selection import train_test_split
 
 class MyLinearRegression(object):
     def __init__(self, eta=0.1, n_iter=50):
@@ -30,6 +29,6 @@ regr = MyLinearRegression()
 weight = regr.fit(X, y)
 print(weight)
 
-assert(np.array_equal(weight, np.array([1.05, 1.2])))
+assert(np.array_equal(weight, np.array([0.95, 1.05])))
 
 
