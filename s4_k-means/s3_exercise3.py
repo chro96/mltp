@@ -23,7 +23,9 @@ class MyKMeans(object):
 X = np.array([[1,1],[1,2],[2,2],[4,5],[5,4]])
 kmeans = MyKMeans(n_clusters=2, max_iter=5, random_state=1)
 
-nearest = kmeans._nearest(np.array([[1,2],[2,2]]), np.array([4,5]))
+cluster_centers = np.array([[1,2],[2,2]])
+sample = np.array([4,5])
+nearest = kmeans._nearest(cluster_centers, sample)
 print(nearest)
 assert(nearest == 1)
 

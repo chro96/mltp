@@ -20,7 +20,9 @@ class MyKMeans(object):
 X = np.array([[1,1],[1,2],[2,2],[4,5],[5,4]])
 kmeans = MyKMeans(n_clusters=2, max_iter=5, random_state=1)
 
-distance = kmeans._distance(np.array([[1,-1],[2,0]]), np.array([3, 3]))
+cluster_centers = np.array([[1,-1],[2,0]])
+sample = np.array([3, 3])
+distance = kmeans._distance(cluster_centers, sample)
 print(distance)
 assert(np.allclose(distance, np.array([4.47213595, 3.16227766])))
 
