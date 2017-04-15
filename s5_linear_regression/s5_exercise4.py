@@ -64,5 +64,3 @@ y_hat = regr.predict(X_test)
 print(y_hat)
 
 assert(np.allclose(y_hat, np.array([7,9])))
-
-
