@@ -25,6 +25,7 @@ class MyLinearRegressionSGD(object):
                 # h(x)
                 output = x.dot(self.w)
                 # θ := θ + (α/m)(y−h(x))X
+                # 1 サンプルごとなので m は必要がなくなる
                 self.w += self.eta * (target - output) * x
         return self
 
