@@ -1,34 +1,36 @@
 from pdb import set_trace
 import numpy as np
-import pygal
+from bokeh.plotting import figure, output_file, show
 
-# def format(x):
-#   return "(%s,%s)" % (x[0],x[1])
+def helper(x_train, y_train, x_test, i=''):
+    output_file("plot/scatter%s.html" % i)
 
-def helper(x_train, y_train, x_test, r, i=''):
-    xy_chart = pygal.XY(stroke=False, range=(-r, r), xrange=(-r, r), x_title='経度', y_title='緯度')
+    p = figure(
+       tools="pan,box_zoom,reset,save", title="住所と何人暮らしかの関係",
+       x_axis_label='経度', y_axis_label='緯度'
+    )
 
-    ones = [i for i, y in enumerate(y_train) if y == 1]
-    zeros = [i for i, y in enumerate(y_train) if y == 0]
-
-    xy_chart.title = '住所と何人暮らしかの関係'
-    xy_chart.add('一人暮らし', x_train[ones], dots_size=4)
-    xy_chart.add('ルームシェア', x_train[zeros], dots_size=4)
-    xy_chart.add('Test Data', x_test, dots_size=4)
-    xy_chart.render_to_file('scatter%s.svg' % i)
-    xy_chart.render_in_browser()
+    ones = x_train[np.where(y_train == 1)]
+    p.circle(ones.T[0], ones.T[1], fill_color="red", size=8)
+    zeros = x_train[np.where(y_train == 0)]
+    p.circle(zeros.T[0], zeros.T[1], fill_color="blue", size=8)
+    p.circle(x_test.T[0], x_test.T[1], fill_color="green", size=8)
+    show(p)
 
 def visualize1():
     x_train = np.array([[-1, -1], [-2, -1], [-3, -2], [1, 1], [2, 1], [3, 2]])
     y_train = np.array([1,1,1,0,0,0])
     x_test = np.array([[1, 0], [-2, -2]])
-    helper(x_train, y_train, x_test, 4)
+    helper(x_train, y_train, x_test)
 
 def visualize2():
     x_train = np.array([[1, 1], [4, 4], [5, 5]])
     y_train = np.array([1,0,0])
     x_test = np.array([[0, 0]])
-    helper(x_train, y_train, x_test, 5, 2)
+    helper(x_train, y_train, x_test, 2)
 
 visualize1()
 visualize2()
+
+
+

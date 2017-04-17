@@ -1,58 +1,38 @@
 from pdb import set_trace
 import numpy as np
-import pygal
+from bokeh.plotting import figure, output_file, show
 
 X = np.array([[1,1],[1,2],[2,2],[4,5],[5,4]])
 
-r = 5
+colors = ['red','blue','green']
 
-def helper():
-    chart = pygal.XY(stroke=False, range=(0, r), xrange=(0, r), x_title='経度', y_title='緯度')
-    chart.title = 'Clustering'
-    return chart
+def helper(data, i=''):
+    output_file("plot/scatter%s.html" % i)
 
-def visualize1():
-    i = ''
-    chart = helper()
-    chart.add('X', X, dots_size=4)
-    chart.render_to_file('scatter%s.svg' % i)
-    chart.render_in_browser()
+    p = figure(
+       tools="pan,box_zoom,reset,save", title="Clustering",
+       x_axis_label='経度', y_axis_label='緯度'
+    )
 
-def visualize2():
-    i = 2
-    chart = helper()
-    chart.add('cluster1', X[:1], dots_size=4)
-    chart.add('cluster2', X[1:], dots_size=4)
-    chart.add('cluster centers', np.array([[1.05,1],[1.05,2]]), dots_size=4)
-    chart.render_to_file('scatter%s.svg' % i)
-    chart.render_in_browser()
+    for i, d in enumerate(data):
+        p.circle(d.T[0], d.T[1], fill_color=colors[i], size=8)
+    show(p)
 
-def visualize3():
-    i = 3
-    chart = helper()
-    chart.add('cluster1', X[:3], dots_size=4)
-    chart.add('cluster2', X[3:], dots_size=4)
-    chart.add('cluster centers', np.array([[1.05,1],[3,3.25]]), dots_size=4)
-    chart.render_to_file('scatter%s.svg' % i)
-    chart.render_in_browser()
+helper([X])
+helper([X[:1], X[1:], np.array([[1.05,1],[1.05,2]])], 2)
+helper([X[:3], X[3:], np.array([[1.05,1],[3,3.25]])], 3)
+helper([X[:3], X[3:], np.array([[1.333,1.667],[4.5,4.5]])], 4)
 
-def visualize4():
-    i = 4
-    chart = helper()
-    chart.add('cluster1', X[:3], dots_size=4)
-    chart.add('cluster2', X[3:], dots_size=4)
-    chart.add('cluster centers', np.array([[1.333,1.667],[4.5,4.5]]), dots_size=4)
-    chart.render_to_file('scatter%s.svg' % i)
-    chart.render_in_browser()
+output_file("plot/inertia.html")
+p = figure(
+   tools="pan,box_zoom,reset,save", title="Clustering",
+   x_axis_label='クラスター数', y_axis_label='inertia'
+)
+x = [2,3,4,5,6]
+y = [14.2, 5,4,3.5,3.2]
+p.line(x, y)
+p.circle(x, y)
+show(p)
 
-visualize1()
-visualize2()
-visualize3()
-visualize4()
 
-line_chart = pygal.Line()
-line_chart.title = 'クラスター数とinertiaの関係'
-line_chart.x_labels = ['2','3','4','5','6']
-line_chart.add('inertia',  [14.2, 5,4,3.5,3.2])
-line_chart.render_to_file('inertia.svg')
-line_chart.render_in_browser()
+

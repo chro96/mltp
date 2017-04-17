@@ -1,5 +1,10 @@
 # MLTP (Machine Learning Training Program)
 
-MLTPのExerciseやグラフが入ってます。
+## 環境構築
 
-Python version: anaconda3-4.1.0
+minicondaを使ってます。
+
+[minicondaをここからダウンロード](https://conda.io/miniconda.html)
+```
+conda env create -f environment.yml
+```
