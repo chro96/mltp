@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>K-Means Clustering - Machine Learning engineer Training Program</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "K-Means Clustering";
+    var mkdocs_page_input_path = "section1/unit4/k-means.md";
+    var mkdocs_page_url = "/section1/unit4/k-means/";
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> Machine Learning engineer Training Program</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Traditional Machine Learning</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <span class="caption-text">Unit1</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../unit1/introduction/">Introduction</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../unit1/k-nn/">k-Nearest Neighbors</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Unit2</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../unit2/supervised_learning/">Supervised Learning</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Unit3</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../unit3/naive_bayes/">Naive Bayes</a>
+                </li>
+    </ul>
+                </li>
+                <li class=" current">
+                    
+    <span class="caption-text">Unit4</span>
+    <ul class="subnav">
+                <li class="toctree-l3 current">
+                    
+    <a class="current" href="./">K-Means Clustering</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l4"><a href="#exercises">Exercises</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l5" href="#exercise-1">Exercise 1</a></li>
+        
+            <li><a class="toctree-l5" href="#exercise-2">Exercise 2</a></li>
+        
+            <li><a class="toctree-l5" href="#exercise-3">Exercise 3</a></li>
+        
+            <li><a class="toctree-l5" href="#exercise-4">Exercise 4</a></li>
+        
+            <li><a class="toctree-l5" href="#exercise-5">Exercise 5</a></li>
+        
+            <li><a class="toctree-l5" href="#exercise-6">Exercise 6</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l4"><a href="#early-stopping">Early Stopping</a></li>
+    
+
+    <li class="toctree-l4"><a href="#_1">最適なクラスター数</a></li>
+    
+
+    </ul>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Unit5</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../unit5/linear_regression/">Linear Regression</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Unit6</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../unit6/logistic_regression/">Logistic Regression</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">Machine Learning engineer Training Program</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Traditional Machine Learning &raquo;</li>
+        
+      
+        
+          <li>Unit4 &raquo;</li>
+        
+      
+    
+    <li>K-Means Clustering</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/itandi/mltp/edit/master/docs/section1/unit4/k-means.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>今回はK-Meansという一番シンプルで有名なクラスタリングのモデルを勉強します。</p>
+<p>以下のデータを２つのクラスターに分けたいとしましょう。</p>
+<p><img alt="scatter" src="../../../img/unit4/scatter.png" /></p>
+<p>まず<em>cluster center</em>(クラスターの中心値)をランダムに決めます。一番簡単な方法は、Xの中からランダムに選ぶ方法です。この場合<code>(1,1)</code>と<code>(1,2)</code>を選びました。Xと被らないように少しずらしてますが本当は同じ値です。</p>
+<p>次に、それぞれのデータでどっちのcluster centerに近いかをEuclidean Distanceを使って計算します。この場合<code>(1,1)</code>以外の４つのデータは全て<code>(1,2)</code>の方に近いです。</p>
+<p><img alt="scatter2" src="../../../img/unit4/scatter2.png" /></p>
+<p>次にcluster centerをアップデートします。方法は簡単で、そのクラスターに属してるデータの平均値を取ります。<code>(1,1)</code>に関しては属してるデータが<code>(1,1)</code>しかないのでそのままです。</p>
+<p><code>(1,2)</code>は属してるデータが４つあります。x軸とy軸でそれぞれ平均を取るのでx軸は</p>
+<p>
+<script type="math/tex; mode=display"> \frac{1+2+4+5}{4} = \frac{12}{4} = 3 </script>
+</p>
+<p>y軸は</p>
+<p>
+<script type="math/tex; mode=display"> \frac{2+2+5+4}{4} = \frac{13}{4} = 3.25 </script>
+</p>
+<p>となります。</p>
+<p>後は同じステップを繰り返すだけです。cluster centerがアップデートされたので、クラスターもそれに応じて変化したのが分かります。</p>
+<p><img alt="scatter3" src="../../../img/unit4/scatter3.png" /></p>
+<p>これを繰り返していくうちにcluster centerはこのようになります。</p>
+<p><img alt="scatter4" src="../../../img/unit4/scatter4.png" /></p>
+<h1 id="exercises">Exercises</h1>
+<p>今回も<a href="http://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html#sklearn.cluster.KMeans">scikit-learnのK-Means</a>と同じAPIにします。</p>
+<pre><code class="python">import numpy as np
+
+class MyKMeans(object):
+    def __init__(self, n_clusters=8, max_iter=300, random_state=None):
+        self.n_clusters = n_clusters
+        self.max_iter = max_iter
+        self.random_state = random_state
+        if self.random_state:
+            np.random.seed(self.random_state)
+</code></pre>
+
+<h2 id="exercise-1">Exercise 1</h2>
+<p>クラスターの初期値をn_clustersの分だけ作ります。Xからランダムに選び<code>self.cluster_centers_</code>に入れましょう。</p>
+<h2 id="exercise-2">Exercise 2</h2>
+<p>次にEuclidean Distanceを計算します。k-NNの時に書いたので計算の方法は分かると思います。しかし今回はインプットが2d array(centers)と1d array(x)なので、xとそれぞれのクラスターの中央値とのEuclidean Distanceを計算して下さい。</p>
+<p>numpyのbroadcastingを使えばループなしでいけます。</p>
+<h2 id="exercise-3">Exercise 3</h2>
+<p>次に一番近いクラスターのindexをリターンするメソッドを書きましょう。<code>_distance</code>を使って下さい</p>
+<h2 id="exercise-4">Exercise 4</h2>
+<p>やっとメインのアルゴリズムが書けます。<code>_nearest</code>を使ってxがどのクラスターに属するかを計算し<code>self.labels_</code>に入れています。
+これを使ってXをクラスター毎に分けましょう。</p>
+<pre><code class="python">def fit(self, X):
+    initial = np.random.permutation(X.shape[0])[:self.n_clusters]
+    self.cluster_centers_ = X[initial]
+
+    for _ in range(self.max_iter):
+        self.labels_ = np.array([self._nearest(self.cluster_centers_, x) for x in X])
+        X_by_cluster = # your code here
+        return X_by_cluster
+</code></pre>
+
+<h2 id="exercise-5">Exercise 5</h2>
+<p><code>self.cluster_centers_</code>をアップデートさせましょう。<code>X_by_cluster</code>の平均値を取ります。</p>
+<h2 id="exercise-6">Exercise 6</h2>
+<p>学習には不要なのですが、どれだけ上手くクラスタリングされてるかを見るために<em>inertia</em>という指標を使います。
+inertiaはそれぞれのcluster centerとそれに属してるデータの<em>Square Distance</em>の合計です。Square DistanceはEuclidean Distanceのルートを取らない版です。</p>
+<p>例えばcluster center(1,2)とx(3,4)のSquare Distanceは</p>
+<p>
+<script type="math/tex; mode=display"> (1-3)^2 + (2-4)^2 = 4 + 4 = 8 </script>
+</p>
+<p>です。</p>
+<h1 id="early-stopping">Early Stopping</h1>
+<p>実際は何回目でcluster centerが動かなくなるか分からないので、max_iterを適当に選んでやります。
+データが少ない場合はこれでも良いんですが、データが多い場合は無駄な学習時間を削減したいです。その為には<code>self.inertia_</code>がほとんど変化しなくなったらストップするという方法があります。
+scikit-learnでは<em>tolerance</em>(tol)というパラメータがあり、どれくらい変化しなくなったら止めるかというのをここで設定することでが出来ます。</p>
+<p>もし余裕があれば書いてみて下さい。</p>
+<h1 id="_1">最適なクラスター数</h1>
+<p>何クラスターに分けたいというのが決まってる場合は問題ないのですが、多くの場合は幾つに分けたらいいか分からないというのが普通です。</p>
+<p>最適なクラスター数を見つける一番簡単な方法は、クラスター数別にinertiaを見てinertiaの減少が著しいところを選びます。</p>
+<p>以下の例だと、クラスター数が３の場合２の時よりもinertiaが大幅に減少しています。しかしそれ以上クラスター数を増やしてもそこまでinertiaが減少していないので最適なクラスター数は３と言えます。</p>
+<p><img alt="inertia" src="../../../img/unit4/inertia.png" /></p>
+<p>もっと複雑なテクニックもありますが、これだけ知っていれば十分でしょう。</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../unit5/linear_regression/" class="btn btn-neutral float-right" title="Linear Regression">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../unit3/naive_bayes/" class="btn btn-neutral" title="Naive Bayes"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/itandi/mltp" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../../unit3/naive_bayes/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../unit5/linear_regression/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../../../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+</body>
+</html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Supervised Learning - Machine Learning engineer Training Program</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Supervised Learning";
+    var mkdocs_page_input_path = "section1/unit2/supervised_learning.md";
+    var mkdocs_page_url = "/section1/unit2/supervised_learning/";
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> Machine Learning engineer Training Program</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Traditional Machine Learning</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <span class="caption-text">Unit1</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../unit1/introduction/">Introduction</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../unit1/k-nn/">k-Nearest Neighbors</a>
+                </li>
+    </ul>
+                </li>
+                <li class=" current">
+                    
+    <span class="caption-text">Unit2</span>
+    <ul class="subnav">
+                <li class="toctree-l3 current">
+                    
+    <a class="current" href="./">Supervised Learning</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l4"><a href="#_1">カテゴリーを数字に直す</a></li>
+    
+
+    <li class="toctree-l4"><a href="#feature-scaling">Feature Scaling</a></li>
+    
+
+    <li class="toctree-l4"><a href="#exercise-1">Exercise 1</a></li>
+    
+
+    <li class="toctree-l4"><a href="#exercise-2">Exercise 2</a></li>
+    
+
+    <li class="toctree-l4"><a href="#exercise-3">Exercise 3</a></li>
+    
+
+    <li class="toctree-l4"><a href="#overfitting">Overfitting</a></li>
+    
+
+    </ul>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Unit3</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../unit3/naive_bayes/">Naive Bayes</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Unit4</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../unit4/k-means/">K-Means Clustering</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Unit5</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../unit5/linear_regression/">Linear Regression</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Unit6</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../unit6/logistic_regression/">Logistic Regression</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">Machine Learning engineer Training Program</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Traditional Machine Learning &raquo;</li>
+        
+      
+        
+          <li>Unit2 &raquo;</li>
+        
+      
+    
+    <li>Supervised Learning</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/itandi/mltp/edit/master/docs/section1/unit2/supervised_learning.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>前回k-Nearest Neighborsを勉強してSupervised Learningとは何かを理解しました。
+しかしデータには色んな種類があり、どんなデータでもそのままClassifierに突っ込めば勝手に予測してくれるわけではありません。</p>
+<p>今回はIris Flower Data setよりも少しだけ複雑なデータを使い、Supervised Learningの基礎を勉強していきます。</p>
+<p>今回使うのはHuman Resourceのデータです。従業員の情報からその人が退職するかどうかを予測するというものです。
+<a href="https://www.kaggle.com/ludobenistant/hr-analytics">https://www.kaggle.com/ludobenistant/hr-analytics</a></p>
+<p>ページの下のPreviewの"Show Column Description"というところに各特徴の簡単な説明とデータタイプが書かれています。</p>
+<h2 id="_1">カテゴリーを数字に直す</h2>
+<p>sales(所属部署)とsalaryのデータはstringで、この場合どちらもカテゴリーです。stringをそのままk-NNに突っ込むわけにはいかないので、数字に直す必要があります。</p>
+<p>以下のsalaryのようにpandasとpython dictionaryを使って数字に変換することも出来ますし、<a href="http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.LabelEncoder.html">scikit learnの label encoder</a>のlabel encoderを使って自動的に数字にすることも出来ます。</p>
+<pre><code class="python">#s1_categorical.py
+import numpy as np 
+import pandas as pd
+from sklearn.preprocessing import LabelEncoder, StandardScaler
+from sklearn.model_selection import train_test_split
+from sklearn.neighbors import KNeighborsClassifier
+
+le = LabelEncoder()
+
+df = pd.read_csv(&quot;HR_comma_sep.csv&quot;)
+
+salary_mapping = {'high': 3, 'medium': 2, 'low': 1}
+df[&quot;salary&quot;] = df[&quot;salary&quot;].map(salary_mapping)
+
+df.sales = le.fit_transform(df.sales)
+print(df.head())
+
+y = df.left.values
+col = list(df.columns)
+col.remove(&quot;left&quot;)
+x = df[col].values
+</code></pre>
+
+<h2 id="feature-scaling">Feature Scaling</h2>
+<p>データによってレンジが違います。例えばsatisfaction_levelやlast_evaluationのレンジは0~1です。average_monthly_hoursは他の特徴に比べてレンジが大きいのが分かります。これをこのままk-NNに入れると、average_monthly_hoursの違いが他の特徴の違いに比べて大きいため、他の特徴がほとんど考慮されなくなります。</p>
+<p>どの特徴も均等に考慮するには、各特徴を同じ大きさにする必要があります。
+その処理のことを<em>Feature Scaling</em>と呼びます。
+<a href="https://en.wikipedia.org/wiki/Feature_scaling">https://en.wikipedia.org/wiki/Feature_scaling</a></p>
+<p>その中でも、平均(mean)を0にし標準偏差(standard deviation)を1になるように特徴をスケールさせるメソッドを<em>Standardization</em>と呼びます。公式は以下の通りです。</p>
+<p>
+<script type="math/tex; mode=display"> x' = \frac{x - \bar{x}}{\sigma} </script>
+</p>
+<p>x = [1, 5, 0] だとしてx'を求めてみましょう。</p>
+<p>
+<script type="math/tex; mode=display"> \bar{x} = \frac{1 + 5 + 0}{3} = 2 </script>
+</p>
+<p>
+<script type="math/tex; mode=display"> x - \bar{x} = [1-2, 5-2, 0-2] = [-1, 3, -2] </script>
+</p>
+<p>
+<script type="math/tex; mode=display"> \sigma = \sqrt{ \frac{1^2 + 3^2 + (-2)^2}{3}} = \sqrt{\frac{14}{3}} = 2.160 </script>
+</p>
+<p>
+<script type="math/tex; mode=display"> x' = \frac{[-1,3,-2]}{2.160} = [-0.463,  1.389, -0.926] </script>
+</p>
+<p>Feature Scalingはほぼ全てのモデルを使う際に必要です。Feature Scalingが必要ない有名なモデルにDecision Treeがあります。</p>
+<h2 id="exercise-1">Exercise 1</h2>
+<p>まずは一つの特徴だけスケールさせる関数を書きましょう。</p>
+<h2 id="exercise-2">Exercise 2</h2>
+<p><a href="http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.scale.html#sklearn.preprocessing.scale">scikit-learnのscale</a>はXをインプットとして取るので、各特徴をスケールさせます。</p>
+<h2 id="exercise-3">Exercise 3</h2>
+<p>実際はTraining dataをTest dataに別々にscaleするのではなく、Training dataのmeanとstandard deviationを使って両方ともスケールします。
+そのためには<a href="http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html#sklearn.preprocessing.StandardScaler">StandardScaler</a>というクラスを使います。以下が典型的な使用例です。</p>
+<pre><code class="python">scaler = StandardScaler().fit(x_train)
+x_train = scaler.transform(x_train)
+x_test = scaler.transform(x_test)
+</code></pre>
+
+<p>fitの部分は既に完成しているので、transformを完成させましょう。</p>
+<h2 id="overfitting">Overfitting</h2>
+<p>Supervised Learningの目的は将来のデータ、つまりTest dataを予測することです。ということはtraining accuracy(training dataでの精度)が幾ら高くでも意味がありません。training accuracyを高めることを頑張り過ぎてtest accuracyが低くなってしまうことを<em>Overfitting</em>と呼びます。</p>
+<p>k-NNの場合、k=1だとtraining accuracyは必ず1.0になります。何故なら、そのデータ自身が隣人になるからです。しかしこれではgeneralizeしていません。
+k=3の方がtest accuracyが高いです。</p>
+<pre><code class="python"># s6_overfitting.py
+
+...
+
+
+## Overfitting
+neighbor = KNeighborsClassifier(n_neighbors=1, weights='uniform', p=2)
+neighbor.fit(x_train, y_train)
+print(neighbor.score(x_train, y_train)) # 1.0
+print(neighbor.score(x_test, y_test)) # 0.9526
+
+## Test accuracyはこっちの方が高い
+neighbor = KNeighborsClassifier(n_neighbors=3, weights='distance', p=2)
+neighbor.fit(x_train, y_train)
+print(neighbor.score(x_train, y_train)) # 1.0
+print(neighbor.score(x_test, y_test)) # 0.9550
+
+</code></pre>
+
+<p>今回のデータは擬似的に作られたものでありノイズが少ないので、全体的に精度が高くてあまり面白くないですが、実際のデータだとoverfittingの問題が顕著に表れます。training accuracyとtest accuracyの差が10%以上開いていたら確実にoverfittingなので、training accuracyとtest accuracyの差を縮めるようにパラメータを調整しましょう。</p>
+<p>モデルによってoverfittingの対処法が違います。k-NNの場合は、kが少ない程overfitします。またweightsをdistanceにすると遠くのデータの存在が弱くなるのでoverfitしがちです。</p>
+<p>モデルに関係なくoverfitを防ぐ一番簡単な方法がデータを増やすことです。少ないデータにNeural Networkのようなキャパシティの高いモデル、つまりtraining accuracyの高いモデルを使うと、どんなにパラメータをいじってもoverfitします。
+よってどうやって安く大量の教師用データを集めるかというのは非常に重要な問題です。</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../unit3/naive_bayes/" class="btn btn-neutral float-right" title="Naive Bayes">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../unit1/k-nn/" class="btn btn-neutral" title="k-Nearest Neighbors"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/itandi/mltp" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../../unit1/k-nn/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../unit3/naive_bayes/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../../../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+</body>
+</html>
