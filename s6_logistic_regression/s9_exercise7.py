@@ -59,7 +59,7 @@ class LogisticRegressionOVR(object):
                 output = X.dot(w)
                 errors = y_copy - self._sigmoid(output)
                 w += self.eta / m * errors.dot(X)
-                
+
                 if j % 10 == 0:
                     print(sum(errors**2))
             self.w[:, i] = w
@@ -72,7 +72,7 @@ class LogisticRegressionOVR(object):
 
     def score(self, X, y):
         return sum(self.predict(X) == y) / len(y)
-        
+
     def _sigmoid(self, x):
         return 1 / (1 + np.exp(-x))
 
@@ -119,7 +119,3 @@ X = np.array(
 out = logi._softmax(X)
 print(out)
 assert(np.allclose(out, np.array([[0.72747516,0.26762315,0.00490169],[0.00242826,0.97962921,0.01794253]])))
-
-
-
-
