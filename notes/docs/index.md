@@ -54,7 +54,7 @@ Convolutional Neural Network（画像認識）
 ![profile](./img/profile.jpg)
 
 イタンジ株式会社　データサイエンティスト  
-**高橋建三**
+**高橋建三**  kenzo@itandi.co.jp
 
 1990年生まれ。アメリカのUniversity of Northern Iowa – Computer Science major卒業。
 在学中にプログラミングに目覚め、Web開発と機械学習を独学で習得。

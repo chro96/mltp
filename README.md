@@ -2,9 +2,9 @@
 
 ## 環境構築
 
-minicondaを使ってます。
+pytorchをインストール
+[http://pytorch.org/](http://pytorch.org/)
 
-[minicondaをここからダウンロード](https://conda.io/miniconda.html)
 ```
-conda env create -f environment.yml
+pip install -r requirements.txt
 ```
