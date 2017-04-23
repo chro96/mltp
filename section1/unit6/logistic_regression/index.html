@@ -7,13 +7,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   
-  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  
   <title>Logistic Regression - Machine Learning engineer Training Program</title>
+  
+
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+
+  
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
   <link rel="stylesheet" href="../../../css/highlight.css">
+
   
   <script>
     // Current page data
@@ -24,7 +30,10 @@
   
   <script src="../../../js/jquery-2.1.1.min.js"></script>
   <script src="../../../js/modernizr-2.8.3.min.js"></script>
-  <script type="text/javascript" src="../../../js/highlight.pack.js"></script> 
+  <script type="text/javascript" src="../../../js/highlight.pack.js"></script>
+  <script src="../../../js/theme.js"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
   
 </head>
 
@@ -44,136 +53,160 @@
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-	<ul class="current">
-	  
+        <ul class="current">
           
-            <li class="toctree-l1">
-		
-    <a class="" href="../../..">Home</a>
-	    </li>
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../..">Home</a>
+        
+    </li>
+<li>
           
-            <li class="toctree-l1">
-		
-    <span class="caption-text">Traditional Machine Learning</span>
+            <li>
     <ul class="subnav">
-                <li class="">
-                    
-    <span class="caption-text">Unit1</span>
-    <ul class="subnav">
-                <li class="toctree-l3">
-                    
-    <a class="" href="../../unit1/introduction/">Introduction</a>
-                </li>
-                <li class="toctree-l3">
-                    
-    <a class="" href="../../unit1/k-nn/">k-Nearest Neighbors</a>
-                </li>
-    </ul>
-                </li>
-                <li class="">
-                    
-    <span class="caption-text">Unit2</span>
-    <ul class="subnav">
-                <li class="toctree-l3">
-                    
-    <a class="" href="../../unit2/supervised_learning/">Supervised Learning</a>
-                </li>
-    </ul>
-                </li>
-                <li class="">
-                    
-    <span class="caption-text">Unit3</span>
-    <ul class="subnav">
-                <li class="toctree-l3">
-                    
-    <a class="" href="../../unit3/naive_bayes/">Naive Bayes</a>
-                </li>
-    </ul>
-                </li>
-                <li class="">
-                    
-    <span class="caption-text">Unit4</span>
-    <ul class="subnav">
-                <li class="toctree-l3">
-                    
-    <a class="" href="../../unit4/k-means/">K-Means Clustering</a>
-                </li>
-    </ul>
-                </li>
-                <li class="">
-                    
-    <span class="caption-text">Unit5</span>
-    <ul class="subnav">
-                <li class="toctree-l3">
-                    
-    <a class="" href="../../unit5/linear_regression/">Linear Regression</a>
-                </li>
-    </ul>
-                </li>
-                <li class=" current">
-                    
-    <span class="caption-text">Unit6</span>
-    <ul class="subnav">
-                <li class="toctree-l3 current">
-                    
-    <a class="current" href="./">Logistic Regression</a>
-    <ul class="subnav">
+    <li><span>Traditional Machine Learning</span></li>
+
+        
             
-    <li class="toctree-l4"><a href="#logistic-regression">Logistic Regressionの説明</a></li>
-    
+    <ul class="subnav">
+    <li><span>Unit1</span></li>
 
-    <li class="toctree-l4"><a href="#exercises">Exercises</a></li>
-    
-        <ul>
         
-            <li><a class="toctree-l5" href="#exercise-1">Exercise 1</a></li>
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../unit1/introduction/">Introduction</a>
         
-            <li><a class="toctree-l5" href="#exercise-2">Exercise 2</a></li>
-        
-            <li><a class="toctree-l5" href="#exercise3">Exercise3</a></li>
-        
-        </ul>
-    
+    </li>
 
-    <li class="toctree-l4"><a href="#one-vs-restmulticlass-classification">One vs Restを使ったMulticlass Classification</a></li>
-    
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../unit1/k-nn/">k-Nearest Neighbors</a>
+        
+    </li>
 
-    <li class="toctree-l4"><a href="#exercises_1">Exercises</a></li>
-    
-        <ul>
         
-            <li><a class="toctree-l5" href="#exercise-4">Exercise 4</a></li>
-        
-        </ul>
-    
-
-    <li class="toctree-l4"><a href="#softmaxmulticlass-classification">Softmaxを使ったMulticlass Classification</a></li>
-    
-
-    <li class="toctree-l4"><a href="#exercises_2">Exercises</a></li>
-    
-        <ul>
-        
-            <li><a class="toctree-l5" href="#exercise-5">Exercise 5</a></li>
-        
-            <li><a class="toctree-l5" href="#exercise-6">Exercise 6</a></li>
-        
-            <li><a class="toctree-l5" href="#exercise-7">Exercise 7</a></li>
-        
-            <li><a class="toctree-l5" href="#exercise-8">Exercise 8</a></li>
-        
-        </ul>
-    
-
-    <li class="toctree-l4"><a href="#reference">Reference</a></li>
-    
-
     </ul>
-                </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Unit2</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../unit2/supervised_learning/">Supervised Learning</a>
+        
+    </li>
+
+        
     </ul>
-                </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Unit3</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../unit3/naive_bayes/">Naive Bayes</a>
+        
+    </li>
+
+        
     </ul>
-	    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Unit4</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../unit4/k-means/">K-Means Clustering</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Unit5</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../unit5/linear_regression/">Linear Regression</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Unit6</span></li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Logistic Regression</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#logistic-regression">Logistic Regressionの説明</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#exercises">Exercises</a></li>
+                
+                    <li><a class="toctree-l4" href="#exercise-1">Exercise 1</a></li>
+                
+                    <li><a class="toctree-l4" href="#exercise-2">Exercise 2</a></li>
+                
+                    <li><a class="toctree-l4" href="#exercise3">Exercise3</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#one-vs-restmulticlass-classification">One vs Restを使ったMulticlass Classification</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#exercises_1">Exercises</a></li>
+                
+                    <li><a class="toctree-l4" href="#exercise-4">Exercise 4</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#softmaxmulticlass-classification">Softmaxを使ったMulticlass Classification</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#exercises_2">Exercises</a></li>
+                
+                    <li><a class="toctree-l4" href="#exercise-5">Exercise 5</a></li>
+                
+                    <li><a class="toctree-l4" href="#exercise-6">Exercise 6</a></li>
+                
+                    <li><a class="toctree-l4" href="#exercise-7">Exercise 7</a></li>
+                
+                    <li><a class="toctree-l4" href="#exercise-8">Exercise 8</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#reference">Reference</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+    </ul>
+
+        
+    </ul>
+<li>
           
         </ul>
       </div>
@@ -208,8 +241,9 @@
     <li>Logistic Regression</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/itandi/mltp/edit/master/docs/section1/unit6/logistic_regression.md"
-          class="icon icon-github"> Edit on GitHub</a>
+        
+          <a href="https://github.com/itandi/mltp" class="icon icon-github"> Edit on GitHub</a>
+        
       
     </li>
   </ul>
@@ -482,13 +516,13 @@ http://cs231n.github.io/linear-classify/#softmax</p>
       </div>
 
     </section>
-    
+
   </div>
 
-  <div class="rst-versions" role="note" style="cursor: pointer">
+<div class="rst-versions" role="note" style="cursor: pointer">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
-          <a href="https://github.com/itandi/mltp" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+          <a href="https://github.com/itandi/mltp" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
         <span><a href="../../unit5/linear_regression/" style="color: #fcfcfc;">&laquo; Previous</a></span>
@@ -496,8 +530,6 @@ http://cs231n.github.io/linear-classify/#softmax</p>
       
     </span>
 </div>
-    <script src="../../../js/theme.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 </body>
 </html>
