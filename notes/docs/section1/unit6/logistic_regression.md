@@ -259,4 +259,4 @@ xが大きいと指数が物凄くなってしまいoverflowしてしまうで�
 # Reference
 
 Softmaxとcross entropyの説明が分かり易いです。
-http://cs231n.github.io/linear-classify/#softmax
+[http://cs231n.github.io/linear-classify/#softmax](http://cs231n.github.io/linear-classify/#softmax)

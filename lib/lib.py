@@ -61,9 +61,7 @@ class Estimator(object):
         self.loss_f = loss
 
     def _fit(self, loader, train=True, confusion=False):
-        """
-        train one epoch
-        """
+        """train one epoch"""
         # train mode
         self.model.train()
 
@@ -104,7 +102,6 @@ class Estimator(object):
 
     def predict(self, X):
         """X: PyTorch Tensor"""
-
         X = Variable(X)
         return self.model(X)
 

@@ -21,3 +21,6 @@ pages:
         - 'Linear Regression': 'section1/unit5/linear_regression.md'
       - Unit6:
         - 'Logistic Regression': 'section1/unit6/logistic_regression.md'
+    - Deep Learning:
+      - Unit7:
+        - 'Logistic Regression2': 'section2/unit7/logistic_regression2.md'

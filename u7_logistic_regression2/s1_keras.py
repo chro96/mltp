@@ -12,9 +12,9 @@ from keras.utils.np_utils import to_categorical
 iris = datasets.load_iris()
 x, y = iris.data, iris.target
 num_classes = len(np.unique(y))
-y = to_categorical(y, num_classes=num_classes)
+one_hot = to_categorical(y, num_classes=num_classes)
 
-x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=.4)
+x_train, x_test, y_train, y_test = train_test_split(x, one_hot, test_size=.4)
 print("%s\n%s\n%s\n%s" % (x_train.shape, y_train.shape, x_test.shape, y_test.shape))
 
 clf = Sequential()
