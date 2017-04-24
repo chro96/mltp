@@ -100,8 +100,8 @@ x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=.4)
 print("%s\n%s\n%s\n%s" % (x_train.shape, y_train.shape, x_test.shape, y_test.shape))
 
 train = TensorDataset(from_numpy(x_train).float(), from_numpy(y_train))
-train_loader = DataLoader(train, batch_size, shuffle=True)
 test = TensorDataset(from_numpy(x_test).float(), from_numpy(y_test))
+train_loader = DataLoader(train, batch_size, shuffle=True)
 test_loader = DataLoader(test, batch_size, shuffle=False)
 
 # train

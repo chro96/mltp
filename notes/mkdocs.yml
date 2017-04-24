@@ -4,7 +4,6 @@ extra_javascript:
 markdown_extensions:
     - mdx_math
 theme: readthedocs
-repo_url: https://github.com/itandi/mltp
 pages:
     - Home: index.md
     - Traditional Machine Learning:

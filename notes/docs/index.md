@@ -4,8 +4,9 @@ MLTPはアルゴリズムを一から書くことによって機械学習を勉�
 元々イタンジ株式会社のエンジニア向けの社内教育プログラムとして始まりました。
 しかし、より多くの方の役に立ちたいという思いから、外部に公開することにしました。
 
+[Exerciseのコードはこちらから](https://github.com/itandi/mltp/)
 
-
+[質問はGitterで](https://gitter.im/itandi_mltp/Lobby?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
 
 ## プログラムの内容
 
@@ -38,16 +39,16 @@ pythonとnumpyを使ってmini scikit-learn libraryを作ります。色々な�
 PyTorchを使ってDeep Learningを勉強していきます。
 
 **Unit7**  
-Logistic Regression2
+[Logistic Regression2](./section2/unit7/logistic_regression2.md)
 
 **Unit8**  
 Neural Network
 
 **Unit9**  
-Recurrent Neural Network（自然言語処理）
+Convolutional Neural Network（画像認識）
 
 **Unit10**  
-Convolutional Neural Network（画像認識）
+Recurrent Neural Network（自然言語処理）
 
 ## 講師紹介
 

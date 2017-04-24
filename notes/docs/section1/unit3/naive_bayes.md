@@ -179,7 +179,7 @@ class MyBernoulliNB(object):
         denominator = np.array([len(i) + smoothing for i in separated])
         # probability of each term
         self.feature_prob_ = # Your code here
-                return self
+        return self
 ```
 
 ## Exercise 7
