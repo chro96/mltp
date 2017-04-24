@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Logistic Regression2 - Machine Learning engineer Training Program</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Logistic Regression2";
+    var mkdocs_page_input_path = "section2/unit7/logistic_regression2.md";
+    var mkdocs_page_url = "/section2/unit7/logistic_regression2/";
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> Machine Learning engineer Training Program</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Traditional Machine Learning</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <span class="caption-text">Unit1</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../section1/unit1/introduction/">Introduction</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../section1/unit1/k-nn/">k-Nearest Neighbors</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Unit2</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../section1/unit2/supervised_learning/">Supervised Learning</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Unit3</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../section1/unit3/naive_bayes/">Naive Bayes</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Unit4</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../section1/unit4/k-means/">K-Means Clustering</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Unit5</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../section1/unit5/linear_regression/">Linear Regression</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Unit6</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../../section1/unit6/logistic_regression/">Logistic Regression</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Deep Learning</span>
+    <ul class="subnav">
+                <li class=" current">
+                    
+    <span class="caption-text">Unit7</span>
+    <ul class="subnav">
+                <li class="toctree-l3 current">
+                    
+    <a class="current" href="./">Logistic Regression2</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l4"><a href="#keras">Keras</a></li>
+    
+
+    <li class="toctree-l4"><a href="#pytorch">PyTorch</a></li>
+    
+
+    </ul>
+                </li>
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">Machine Learning engineer Training Program</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Deep Learning &raquo;</li>
+        
+      
+        
+          <li>Unit7 &raquo;</li>
+        
+      
+    
+    <li>Logistic Regression2</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/itandi/mltp/edit/master/docs/section2/unit7/logistic_regression2.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>Unit7からDeep Learning編となります。今回はKerasとPyTorchの２つのDeep LearningのライブラリでLogistic Regressionを書いていきます。</p>
+<h2 id="keras">Keras</h2>
+<p><a href="https://keras.io/">Keras</a>は簡単にDeep Learningが使えるライブラリです。scikit-learnのDeep Learning版と言ってもいいかもしれません。
+KerasはTorchから影響を受けたので、後ほど紹介するPyTorchに似ている部分があります。
+KerasはGoogleのエンジニアが作ったのもあり、今後更にTensorflowと一緒に使いやすくなっていくそうです。</p>
+<p>以下がおなじみのIris Flowerを使ったKerasでのLogistic Regressionの例です。scikit-learnと違い"Logistic Regression"という単語はどこにも出てきません。Deep Learningは様々なレイヤーを重ねる事によってモデルを作ります。Logistic Regressionはレイヤーが線形関数とSoftmaxだけのシンプルなモデルということになります。</p>
+<pre><code class="python"># s1_keras.py
+
+import numpy as np
+
+from sklearn import datasets
+from sklearn.model_selection import train_test_split
+
+from keras.models import Sequential
+from keras.layers import Dense, Activation
+from keras.optimizers import SGD
+from keras.utils.np_utils import to_categorical
+
+iris = datasets.load_iris()
+x, y = iris.data, iris.target
+num_classes = len(np.unique(y))
+one_hot = to_categorical(y, num_classes=num_classes)
+
+x_train, x_test, y_train, y_test = train_test_split(x, one_hot, test_size=.4)
+print(&quot;%s\n%s\n%s\n%s&quot; % (x_train.shape, y_train.shape, x_test.shape, y_test.shape))
+
+clf = Sequential()
+clf.add(Dense(num_classes, input_dim=x.shape[1]))
+clf.add(Activation('softmax'))
+
+optimizer = SGD(lr=0.01)
+clf.compile(optimizer=optimizer, loss='categorical_crossentropy', metrics=['accuracy'])
+clf.fit(x_train, y_train, epochs=500, batch_size=32, validation_data=(x_test, y_test))
+score, acc = clf.evaluate(x_test, y_test, batch_size=32)
+print('Test score:', score)
+print('Test accuracy:', acc)
+</code></pre>
+
+<p><code>compile</code>で<code>optimizer</code>と<code>loss</code>を設定します。<code>optimizer</code>は最適化のアルゴリズムです。SGD(Stochastic Gradient Descent)はUnit5で説明した通りですが、一つ違うのは、１サンプルづつではなくバッチ毎に計算します。それによってSGDの良さを残しつつ、最小値に近い値にconvergeすることが出来ます。
+SGD以外にも沢山optimizerがありますが、細かい説明は割愛します。Adamが一番早いらしいので僕はAdamをいつも使っています。パラメータの<code>lr</code>はlearning rateの略で、scikit-learnの<code>eta</code>と同じです。</p>
+<p><code>loss</code>は何のloss functionを使うかの設定です。Binary Classification用に<code>binary_crossentropy</code>がありますが、<code>categorical_crossentropy</code>はbinaryでもmulticlassでも使えます。Iris Flowerはクラスが３つあるので<code>categorical_crossentropy</code>を使います。</p>
+<p>Kerasで<code>categorical_crossentropy</code>を使う時に気を付けなければいけないのが、yをあらかじめone hot vectorにしておく必要があります。Kerasに<code>to_categorical</code>という関数があるのでそれを使うと楽です。</p>
+<p><code>fit</code>はscikit-learnの<code>fit</code>と同じ役割をします。<code>epochs</code>はscikit-learnの<code>n_iter</code>と同じです。validation_dataを入れてあげると、epoch毎に教師用データでのaccuracy(<code>acc</code>)とテストデータでのaccuracy(val_acc)が同時に見れるので、overfitしてるかどうかが分かって便利です。</p>
+<pre><code>Epoch 1/500
+90/90 [==============================] - 0s - loss: 3.6534 - acc: 0.2444 - val_loss: 3.4043 - val_acc: 0.2667
+Epoch 2/500
+90/90 [==============================] - 0s - loss: 3.2319 - acc: 0.2333 - val_loss: 2.9253 - val_acc: 0.2667
+Epoch 3/500
+90/90 [==============================] - 0s - loss: 2.8314 - acc: 0.2111 - val_loss: 2.5004 - val_acc: 0.2500
+Epoch 4/500
+90/90 [==============================] - 0s - loss: 2.4897 - acc: 0.2222 - val_loss: 2.1629 - val_acc: 0.2500
+</code></pre>
+
+<h2 id="pytorch">PyTorch</h2>
+<p>Kerasはとても簡単に使えるので、Convolutional Neural NetworkやReccurent Neural Networkのような有名なモデルをそのまま使うのであればオススメです。カスタムレイヤーを作ることも出来るので、やりようによってはもっと複雑なモデルも作れます。しかしKerasは元々複雑なものを作るためのものではないので、あまりフレキシブルではありません。MLTPでは複雑なモデルは勉強しませんが、アルゴリズムを理解するのに向いているという理由で、Deep Learning編では<a href="http://pytorch.org/">PyTorch</a>というライブラリを使います。</p>
+<p>何故TensorflowではなくPyTorchを使うかは<a href="http://tech.itandi.co.jp/2017/03/why_you_should_use_pytorch_over_tensorflow/">ブログに書いた</a>のでここでは割愛します。PyTorchの経験があればTensorflowを学ぶ時にも役に立つので心配要りません。</p>
+<p><a href="https://github.com/ritchieng/the-incredible-pytorch">PyTorchのリソースをまとめたリポジトリ</a>があるので、是非参考にしてみて下さい。</p>
+<p>以下がPyTorchのコードです。一見Keras並に少ないコードで済んでるように見えますが、<code>Estimator</code>というクラスをインポートしています。PytorchはKerasのように<code>fit</code>を呼べば勝手に学習してくれるわけではないのでBoilerplate codeが必要です。Unit8以降でも同じコードが必要なので<code>Estimator</code>をモジュールにしました。<code>Estimator</code>については後ほど説明します。</p>
+<pre><code class="python"># s2_pytorch.py
+
+import torch
+from torch import nn, from_numpy
+from torch.utils.data import DataLoader, TensorDataset
+
+from lib.lib import Estimator
+
+batch_size = 32
+
+class LogisticRegression(nn.Module):
+    def __init__(self, input_size, num_classes):
+        super(LogisticRegression, self).__init__()
+        self.linear = nn.Linear(input_size, num_classes)
+
+    def forward(self, x):
+        return self.linear(x)
+
+iris = datasets.load_iris()
+x, y = iris.data, iris.target
+
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=.4)
+print(&quot;%s\n%s\n%s\n%s&quot; % (x_train.shape, y_train.shape, x_test.shape, y_test.shape))
+
+train = TensorDataset(from_numpy(x_train).float(), from_numpy(y_train))
+train_loader = DataLoader(train, batch_size, shuffle=True)
+test = TensorDataset(from_numpy(x_test).float(), from_numpy(y_test))
+test_loader = DataLoader(test, batch_size, shuffle=False)
+
+# train
+model = LogisticRegression(x.shape[1], len(np.unique(y)))
+optimizer = torch.optim.SGD(model.parameters(), lr=0.1)
+criterion = nn.CrossEntropyLoss()
+clf = Estimator(model)
+clf.compile(optimizer=optimizer, loss=criterion)
+clf.fit(train_loader, nb_epoch=500, validation_data=test_loader)
+score, acc, confusion = clf.evaluate(test_loader)
+print('Test score:', score)
+print('Test accuracy:', acc)
+print(confusion[0])
+print(confusion[1])
+torch.save(model.state_dict(), 'pytorch_model.pth')
+</code></pre>
+
+<p><code>PyTorch</code>ではモデルを<code>nn.Module</code>クラスを元に作ります。<code>__init__</code>で必要なレイヤーを定義し、<code>forward</code>でどうそのレイヤーを使うか書きます。
+optimizerとloss functionに関してはKerasと似ています。</p>
+<p><code>fit</code>や<code>evaluate</code>に入れるデータはKerasとちょっと違います。numpy arrayではなく<code>DataLoader</code>というものを使います。<code>Dataloader</code>はバッチサイズを指定してあげるだけでイテレーターを作ってくれる便利なクラスです。<code>Dataloader</code>はPyTorchのDatasetクラスをインプットに取るので<code>TensorDataset</code>を使ってnumpyをDatasetにします。Multiclass classificationでもyはone hot vectorにする必要はありません。</p>
+<p><code>evaluate</code>でスコアと精度だけでなくconfusion matrixもリターンするようにしました。confusion matrixは<a href="http://scikit-learn.org/stable/modules/generated/sklearn.metrics.confusion_matrix.html#sklearn.metrics.confusion_matrix">scikit-learn</a>と同じAPIにしてますが、絶対値だけでなく割合でも表示することにしました。</p>
+<pre><code class="python"># lib/lib.py
+
+def confusion_matrix(y_true, y_pred):
+    n_classes = len(set(np.unique(y_true)) | set(np.unique(y_pred)))
+    CM = np.zeros((n_classes, n_classes)).astype(int)
+    for true, pred in zip(y_true.astype(int), y_pred.astype(int)):
+        CM[true, pred] += 1
+    return CM, CM / np.sum(CM, axis=1, keepdims=True)
+</code></pre>
+
+<p>以下が<code>Estimator</code>クラスです。Kerasと同じような感覚で使えるようにデザインしました。</p>
+<pre><code class="python"># lib/lib.py
+
+class Estimator(object):
+    &quot;&quot;&quot;PyTorchでMulticlass Classificationをする時のboilerplate code&quot;&quot;&quot;
+
+    def __init__(self, model):
+        self.model = model
+
+    def compile(self, optimizer, loss):
+        self.optimizer = optimizer
+        self.loss_f = loss
+
+    def _fit(self, loader, train=True, confusion=False):
+        &quot;&quot;&quot;train one epoch&quot;&quot;&quot;
+        # train mode
+        self.model.train()
+
+        loss_list = []
+        y_pred = np.array([])
+        target = np.array([])
+
+        for X, y in loader:
+            outputs = self.predict(X)
+            loss = self.loss_f(outputs, Variable(y, requires_grad=False))
+            ## for log
+            loss_list.append(loss.data[0])
+            y_pred = np.concatenate((y_pred, torch.topk(outputs, 1)[1].data.numpy().flatten()))
+            target = np.concatenate((target, y.numpy()))
+
+            if train:
+                self.optimizer.zero_grad()
+                loss.backward()
+                self.optimizer.step()
+
+        loss = sum(loss_list) / len(loss_list)
+        acc = sum(y_pred == target) / len(y_pred)
+
+        return (loss, acc, confusion_matrix(target, y_pred)) if confusion else (loss, acc)
+
+    def fit(self, train_loader, nb_epoch=10, validation_data=()):
+        print(&quot;train...&quot;)
+        for t in range(1, nb_epoch + 1):
+            loss, acc = self._fit(train_loader)
+            val_log = ''
+            if validation_data:
+                val_loss, val_acc = self._fit(validation_data, False)
+                val_log = &quot;- val_loss: %06.4f - val_acc: %06.4f&quot; % (val_loss, val_acc)
+            print(&quot;Epoch %s/%s loss: %06.4f - acc: %06.4f %s&quot; % (t, nb_epoch, loss, acc, val_log))
+
+    def evaluate(self, test_loader):
+        return self._fit(test_loader, False, confusion=True)
+
+    def predict(self, X):
+        &quot;&quot;&quot;X: PyTorch Tensor&quot;&quot;&quot;
+        X = Variable(X)
+        return self.model(X)
+
+    def predict_classes(self, X):
+        &quot;&quot;&quot;X: PyTorch Tensor&quot;&quot;&quot;
+        # eval mode
+        self.model.eval()
+        return torch.topk(self.predict(X), 1)[1].data.numpy().flatten()
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../../../section1/unit6/logistic_regression/" class="btn btn-neutral" title="Logistic Regression"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/itandi/mltp" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../../../section1/unit6/logistic_regression/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+    <script src="../../../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+</body>
+</html>
