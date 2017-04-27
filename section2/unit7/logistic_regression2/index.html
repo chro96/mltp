@@ -182,9 +182,6 @@
     <li>Logistic Regression2</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/itandi/mltp/edit/master/docs/section2/unit7/logistic_regression2.md"
-          class="icon icon-github"> Edit on GitHub</a>
-      
     </li>
   </ul>
   <hr/>
@@ -275,8 +272,8 @@ x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=.4)
 print(&quot;%s\n%s\n%s\n%s&quot; % (x_train.shape, y_train.shape, x_test.shape, y_test.shape))
 
 train = TensorDataset(from_numpy(x_train).float(), from_numpy(y_train))
-train_loader = DataLoader(train, batch_size, shuffle=True)
 test = TensorDataset(from_numpy(x_test).float(), from_numpy(y_test))
+train_loader = DataLoader(train, batch_size, shuffle=True)
 test_loader = DataLoader(test, batch_size, shuffle=False)
 
 # train
@@ -404,8 +401,6 @@ class Estimator(object):
 
   <div class="rst-versions" role="note" style="cursor: pointer">
     <span class="rst-current-version" data-toggle="rst-current-version">
-      
-          <a href="https://github.com/itandi/mltp" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
         <span><a href="../../../section1/unit6/logistic_regression/" style="color: #fcfcfc;">&laquo; Previous</a></span>
